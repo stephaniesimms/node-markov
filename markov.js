@@ -51,7 +51,7 @@ class MarkovMachine {
     let wordCount = 1;
   
     while (wordCount < numWords || currWord === null) {
-      let bigram = previousWord + " " + currWord
+      let bigram = previousWord + " " + currWord;
       textArr.push(currWord);
       previousWord = currWord;
       currWord = getRandomWordFromArray(this.chains[bigram]);
