@@ -12,7 +12,7 @@ function readTextFile(path) {
       process.exit(1);
     } else {
       let mm = new MarkovMachine(data);
-      console.log(mm.makeText());
+      console.log(mm.makeTextNgram());
     }
   });
 }
@@ -22,7 +22,7 @@ async function readUrl(path) {
     let response = await axios.get(path);
     let strippedResponse = stripHtml(response.data);
     let mm = new MarkovMachine(strippedResponse);
-    console.log(mm.makeText());
+    console.log(mm.makeTextNgram());
   } catch (err) {
     console.error(`Error fetching ${path}: ${err}`);
     process.exit(1);
